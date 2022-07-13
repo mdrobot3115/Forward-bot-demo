@@ -39,7 +39,7 @@ async def help_msg(bot: ace , m: Message):
         f"**!/usr/bin/env python \n(c) ACE**" +
         f"\n\nI can Forward message from one chat to another\n"+
         f"Available Commands are :"+
-        f"\n\n/ace to start forwarding\n/log - To get Log file\n/restart - To Restart the bot"
+        f"\n\n/forward to start forwarding\n/log - To get Log file\n/restart - To Restart the bot"
     )
 
 @ace.on_message(
