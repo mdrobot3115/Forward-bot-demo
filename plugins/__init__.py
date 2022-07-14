@@ -16,13 +16,13 @@ async def Start_msg(bot: ace , m: Message):
     m.chat.id,
     photo="https://telegra.ph/file/d77a3767a8d58da76f2df.jpg",
     caption = f"**Good Morning [{m.from_user.first_name}](tg://user?id={m.from_user.id})✨️**\n" +
-    f"I'm an advanced forward bot with some useful features!" +
-    f"\nCheck help menu to know more 😼",
+    f"**I'm an advanced forward bot with some useful features!**" +
+    f"\n**Check help menu to know more 😼**",
     # parse_mode="md",
     reply_markup=InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("🙋‍♂️Dev Ace", url="https://t.me/AceCallRobot")],
-            [InlineKeyboardButton("Channel", url="https://t.me/WickedSkull")],
+            [InlineKeyboardButton("❤ Support", url="https://t.me/AceCallRobot"),
+             InlineKeyboardButton("Channel", url="https://t.me/WickedSkull")],
             [InlineKeyboardButton("Repo", url="https://github.com/imacekun/ACE-AUTO-FORWARD/")],
         ],
     )
