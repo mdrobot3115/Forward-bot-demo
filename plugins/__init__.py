@@ -13,8 +13,7 @@ import sys
 )
 async def Start_msg(bot: ace , m: Message):
     await bot.send_photo(
-    m.chat.id,
-    photo="https://telegra.ph/file/d77a3767a8d58da76f2df.jpg",
+    m.chat.id
     caption = f"**Good Morning [{m.from_user.first_name}](tg://user?id={m.from_user.id})✨️**\n" +
     f"**I'm an advanced forward bot with some useful features!**" +
     f"\n**Check help menu to know more 😼**",
