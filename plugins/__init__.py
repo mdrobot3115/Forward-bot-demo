@@ -20,8 +20,8 @@ async def Start_msg(bot: ace , m: Message):
     # parse_mode="md",
     reply_markup=InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("❤ Support", url="https://t.me/AceCallRobot"),
-             InlineKeyboardButton("Channel", url="https://t.me/WickedSkull")],
+            [InlineKeyboardButton("❤ Support", url="https://t.me/VysakhXD"),
+             InlineKeyboardButton("⚡️ Updates", url="https://t.me/VysakhXD")],
             [InlineKeyboardButton("Repo", url="https://github.com/imacekun/ACE-AUTO-FORWARD/")],
         ],
     )
