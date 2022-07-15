@@ -23,7 +23,7 @@ async def Start_msg(bot: ace , m: Message):
         [
             [InlineKeyboardButton("❤ Support", url="https://t.me/VysakhXD"),
              InlineKeyboardButton("⚡️ Updates", url="https://t.me/VysakhXD")],
-            [InlineKeyboardButton("❓️ Help ❓️", callback_data="help")],
+            [InlineKeyboardButton("❓️ Help ❓️", url="https://t.me/VysakhXD")],
         ],
     )
     )
