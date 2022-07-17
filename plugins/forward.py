@@ -11,6 +11,7 @@ from config import Config
 import time
 import os
 
+MessageCount = 0
 
 @ace.on_message(
     filters.chat(AUTH_USERS) & filters.private &
