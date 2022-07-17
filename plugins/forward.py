@@ -40,7 +40,10 @@ async def forward(bot: ace , m: Message):
     except Exception as e:
         await m.reply_text(str(e))
     await m.reply_text("Done Forwarding")
-@forwardbot_cmd("count", is_args=False)
+ 
+@ace.on_message(
+    filters.chat(AUTH_USERS) & filters.private & 
+    filters.incoming & filters.command("count", is_args=False)
 async def handler(event):
     if not await is_sudo(event):
         await event.respond("You are not authorized to use this Bot. Create your own.")
