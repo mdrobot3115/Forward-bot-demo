@@ -6,7 +6,7 @@ from config import Config
 import os
 import sys
 
-@Client.on_message(filters.private & filters.command(["start"]))
+@Client.on_message(filters.command('start') & filters.user(AUTH_USERS))
 async def start(client,message):
         insert(int(message.chat.id))
         await message.reply_text(text =f"""
@@ -22,7 +22,7 @@ async def start(client,message):
         )
         ) 
                  
-@Client.on_message(filters.private & filters.command(["help"])) 
+@Client.on_message(filters.command('help') & filters.user(AUTH_USER))
 async def help(client,message): 
         insert(int(message.chat.id))
         await message.reply_text(text =f"""
