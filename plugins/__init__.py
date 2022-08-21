@@ -15,7 +15,7 @@ async def start(client,message):
         """,reply_to_message_id = message.message_id ,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/VysakhXD) ],
+                [InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/VysakhXD"),
                  InlineKeyboardButton("⚡️ Updates", url="https://t.me/VysakhXD")],
                 [InlineKeyboardButton("Help", callback_data="help")],
             ],
