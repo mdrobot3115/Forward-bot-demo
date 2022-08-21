@@ -6,7 +6,7 @@ from config import Config
 import os
 import sys
 
-@Client.on_message(filters.private & filters.command(["start]))
+@Client.on_message(filters.private & filters.command(["start"]))
 async def start(client,message):
         insert(int(message.chat.id))
         await message.reply_text(text =f"""
