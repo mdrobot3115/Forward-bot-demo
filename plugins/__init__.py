@@ -22,10 +22,10 @@ async def start(client,message):
         )
         ) 
                  
-@Client.on_message(filters.private & filters.command(["help])) 
+@Client.on_message(filters.private & filters.command(["help"])) 
 async def help(client,message): 
         insert(int(message.chat.id))
         await message.reply_text(text =f"""
-        __I can Forward message from one chat to another\nf"Available Commands are\n /forward to start forwarding__
+        __I can Forward message from one chat to another\navailable Commands are\n /forward to start forwarding__
         """
         
