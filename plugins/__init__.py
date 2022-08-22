@@ -21,13 +21,12 @@ async def Start_msg(bot: ace , m: Message):
     # parse_mode="md",
     reply_markup=InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("🙋‍♂️Dev Ace", url="https://t.me/AceCallRobot")],
-            [InlineKeyboardButton("Channel", url="https://t.me/WickedSkull")],
-            [InlineKeyboardButton("Repo", url="https://github.com/imacekun/ACE-AUTO-FORWARD/")],
-        ],
+            [InlineKeyboardButton("❤ Support", url="https://t.me/VysakhXD"),
+             InlineKeyboardButton("⚡️ Updates", url="https://t.me/VysakhXD")],
+            [InlineKeyboardButton("❓️ Help ❓️", callback_data="help")],
+        ]
     )
     )
-
 
 @ace.on_message(
     filters.chat(AUTH_USERS) & filters.private &
