@@ -21,8 +21,8 @@ async def Start_msg(bot: ace , m: Message):
     # parse_mode="md",
     reply_markup=InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("❤ Support", url="https://t.me/VysakhXD"),
-             InlineKeyboardButton("⚡️ Updates", url="https://t.me/VysakhXD")],
+            [InlineKeyboardButton("❤ Support", url="https://t.me/Vysakh_XD"),
+             InlineKeyboardButton("⚡️ Updates", url="https://t.me/Vysakh_XD")],
             [InlineKeyboardButton("❓️ Help ❓️", callback_data="help")],
         ]
     )
