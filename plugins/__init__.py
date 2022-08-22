@@ -15,9 +15,9 @@ async def Start_msg(bot: ace , m: Message):
     await bot.send_photo(
     m.chat.id,
     photo="https://telegra.ph/file/d77a3767a8d58da76f2df.jpg",
-    caption = f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n" +
-    f"\nI am Auto Forwarder bot." +
-    f"\nPress /help for More Info.\n\n__**Developer** : ACE\n**Language** : Python\n**Framwork** : Pyrogram__",
+    caption = f"**Good Morning [{m.from_user.first_name}](tg://user?id={m.from_user.id})✨️**\n" +
+    f"**I'm an advanced forward bot with some useful features!**" +
+    f"\n**Check /help menu to know more 😼**",
     # parse_mode="md",
     reply_markup=InlineKeyboardMarkup(
         [
