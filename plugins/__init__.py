@@ -97,4 +97,4 @@ async def restart_handler(_, m):
 )
 async def log_msg(client, message):
     await client.send_document(message.chat.id, "log.txt")
-h
+
