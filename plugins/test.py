@@ -3,8 +3,6 @@ import re
 import sys
 import asyncio 
 import logging 
-
-from database.users_chats_db import db
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message 
 from pyrogram.errors.exceptions.bad_request_400 import AccessTokenExpired, AccessTokenInvalid
