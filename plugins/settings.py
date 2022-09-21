@@ -2,7 +2,7 @@ import asyncio
 from translation import Translation
 from pyrogram import Client, filters
 from .test import CLIENT 
-from plugins.settings import main_buttons
+
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup 
  
 @Client.on_message(filters.command('settings'))
