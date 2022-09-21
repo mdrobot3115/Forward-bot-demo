@@ -1,4 +1,12 @@
-
+import os
+import sys
+import asyncio 
+from database import db
+from config import config
+from translation import Translation
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaDocument
+from main import LOGGER, prefixes, AUTH_USERS
 
 @ace.on_message(
     filters.chat(AUTH_USERS) & filters.private &
