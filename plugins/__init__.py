@@ -83,7 +83,7 @@ async def about(bot, query):
     )
 
 
-@ace.on_message(
+@Client.on_message(
     filters.chat(AUTH_USERS) & filters.private &
     filters.incoming & filters.command("cancel", prefixes=prefixes)
 )
@@ -91,7 +91,7 @@ async def restart_handler(_, m):
     await m.reply_text("Forwarding stopped", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@ace.on_message(
+@Client.on_message(
     filters.chat(AUTH_USERS) & filters.private &
     filters.incoming & filters.command("log", prefixes=prefixes)
 )
