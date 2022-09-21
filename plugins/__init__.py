@@ -1,7 +1,7 @@
 import os
 import sys
 import asyncio
-from config import config
+from config import Config
 from translation import Translation
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaDocument
