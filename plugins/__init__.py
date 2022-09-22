@@ -16,7 +16,23 @@ main_buttons = [[
         InlineKeyboardButton('❗️Help', callback_data='help') 
         ],[
         
-]]
+]] 
+buttons = [[
+       InlineKeyboardButton('🤖 BOTS',
+                    callback_data=f'settings#bots'),
+       InlineKeyboardButton('📌 CHANNELS',
+                    callback_data=f'settings#channels')
+       ],[
+       InlineKeyboardButton('🖋️ CAPTION',
+                    callback_data=f'settings#caption'),
+       InlineKeyboardButton('🗃️ DATABASE',
+                    callback_data=f'settings#database')
+       ],[
+       InlineKeyboardButton('🔵 FILTERS',
+                    callback_data=f'settings#filters'),
+       InlineKeyboardButton('🛑 BUTTON',
+                    callback_data=f'settings#button')
+       ]]
 
 #===================Start Function===================#
 
