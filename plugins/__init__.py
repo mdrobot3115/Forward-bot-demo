@@ -88,3 +88,7 @@ async def settings_query(bot, query):
        ]] 
     reply_markup = InlineKeyboardMarkup(buttons)
     await query.message.edit_text(
+    text=Translation.ABOUT_TXT,
+        reply_markup=reply_markup,
+        disable_web_page_preview=True,
+    )
