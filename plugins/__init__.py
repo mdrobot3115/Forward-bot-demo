@@ -44,7 +44,7 @@ async def helpcb(bot, query):
             InlineKeyboardButton('💠 About 💠', callback_data='about'),
             InlineKeyboardButton('💠 Status 💠', callback_data='status'),
             ],[
-            InlineKeyboardButton('✚ Add bot ✚', callback_data='addbot')
+            InlineKeyboardButton('💠 Settings 💠', callback_data='settings#main')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await query.message.edit_text(
@@ -68,3 +68,36 @@ async def about(bot, query):
         reply_markup=reply_markup,
         disable_web_page_preview=True,
     )
+@Client.on_callback_query(filters.regex(r'^settings'))
+async def settings_query(bot, query):
+    buttons = [[
+
+       InlineKeyboardButton('🤖 BOTS',
+
+                    callback_data=f'settings#bots'),
+
+       InlineKeyboardButton('📌 CHANNELS',
+
+                    callback_data=f'settings#channels')
+
+       ],[
+
+       InlineKeyboardButton('🖋️ CAPTION',
+
+                    callback_data=f'settings#caption'),
+
+       InlineKeyboardButton('🗃️ DATABASE',
+
+                    callback_data=f'settings#database')
+
+       ],[
+
+       InlineKeyboardButton('🔵 FILTERS',
+
+                    callback_data=f'settings#filters'),
+
+       InlineKeyboardButton('🛑 BUTTON',
+
+                    callback_data=f'settings#button')
+
+       ]]
