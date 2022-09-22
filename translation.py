@@ -106,3 +106,5 @@ I can forward all message from one channel to another channel</i>
 <i>° If the **SOURCE CHAT** is private your userbot must be member or your bot must be admin in there also</b></i>
 
 <b>If the above is checked then the yes button can be clicked</b>"""
+
+  SETTINGS_TXT = """<b>change your settings as your wish</b>"""
