@@ -5,54 +5,66 @@ from main import LOGGER, prefixes, AUTH_USERS
 from config import Config
 import os
 import sys
+ 
+main_buttons = [[
+        InlineKeyboardButton('📜 Support Group', url='https://t.me/venombotupdates'),
+        InlineKeyboardButton('📢 Update Channel ', url='https://t.me/venombotsupport')
+        ],[
+        InlineKeyboardButton('❗️Help', callback_data='help') 
+        ]]
+        
+#===================Start Function===================#
 
+@Client.on_message(filters.private & filters.command(['start']))
+async def start(client, message):
+    user = message.from_user
+    reply_markup = InlineKeyboardMarkup(main_buttons)
+    await client.send_message(
+        chat_id=message.chat.id,
+        reply_markup=reply_markup,
+        text=Translation.START_TXT.format(
+                message.from_user.first_name))
 
-@ace.on_message(
-    filters.chat(AUTH_USERS) & filters.private &
-    filters.incoming & filters.command("start", prefixes=prefixes)
-)
-async def Start_msg(bot: ace , m: Message):
-    await bot.send_photo(
-    m.chat.id,
-    photo="https://telegra.ph/file/d77a3767a8d58da76f2df.jpg",
-    caption = f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n" +
-    f"\nI am Auto Forwarder bot." +
-    f"\nPress /help for More Info.\n\n__**Developer** : ACE\n**Language** : Python\n**Framwork** : Pyrogram__",
-    # parse_mode="md",
-    reply_markup=InlineKeyboardMarkup(
-        [
-            [InlineKeyboardButton("🙋‍♂️Dev Ace", url="https://t.me/AceCallRobot")],
-            [InlineKeyboardButton("Channel", url="https://t.me/WickedSkull")],
-            [InlineKeyboardButton("Repo", url="https://github.com/imacekun/ACE-AUTO-FORWARD/")],
-        ],
+#==================Restart Function==================#
+
+@Client.on_message(filters.private & filters.command(['restart']) & filters.user(Config.AUTH_USER))
+async def restart(client, message):
+    msg = await message.reply_text(
+        text="<i>Trying to restarting.....</i>"
     )
-    )
-
-
-@ace.on_message(
-    filters.chat(AUTH_USERS) & filters.private &
-    filters.incoming & filters.command("help", prefixes=prefixes)
-)
-async def help_msg(bot: ace , m: Message):   
-    await bot.send_message(
-        m.chat.id,
-        f"**!/usr/bin/env python \n(c) ACE**" +
-        f"\n\nI can Forward message from one chat to another\n"+
-        f"Available Commands are :"+
-        f"\n\n/ace to start forwarding\n/log - To get Log file\n/restart - To Restart the bot"
-    )
-
-@ace.on_message(
-    filters.chat(AUTH_USERS) & filters.private &
-    filters.incoming & filters.command("restart", prefixes=prefixes)
-)
-async def restart_handler(_, m):
-    await m.reply_text("Restarted!", True)
+    await asyncio.sleep(5)
+    await msg.edit("<i>Server restarted successfully ✅</i>")
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@ace.on_message(
-    filters.chat(AUTH_USERS) & filters.private &
-    filters.incoming & filters.command("log", prefixes=prefixes)
-)
-async def log_msg(bot: ace , m: Message):   
-    await bot.send_document(m.chat.id, "log.txt")
+#==================Callback Functions==================#
+
+@Client.on_callback_query(filters.regex(r'^help'))
+async def helpcb(bot, query):
+    buttons = [[
+            InlineKeyboardButton('💠 About 💠', callback_data='about'),
+            InlineKeyboardButton('💠 Status 💠', callback_data='status'),
+            ],[
+            InlineKeyboardButton('✚ Add bot ✚', callback_data='addbot')
+    ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await query.message.edit_text(
+        text=Translation.HELP_TXT,
+        reply_markup=reply_markup)
+
+@Client.on_callback_query(filters.regex(r'^back'))
+async def back(bot, query):
+    reply_markup = InlineKeyboardMarkup(main_buttons)
+    await query.message.edit_text(
+       reply_markup=reply_markup,
+       text=Translation.START_TXT.format(
+                query.from_user.first_name))
+
+@Client.on_callback_query(filters.regex(r'^about'))
+async def about(bot, query):
+    buttons = [[InlineKeyboardButton('• back', callback_data='help')]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await query.message.edit_text(
+        text=Translation.ABOUT_TXT,
+        reply_markup=reply_markup,
+        disable_web_page_preview=True,
+    )
