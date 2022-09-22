@@ -16,23 +16,6 @@ main_buttons = [[
         InlineKeyboardButton('❗️Help', callback_data='help') 
         ],[
         
-]] 
-buttons = [[
-       InlineKeyboardButton('🤖 BOTS',
-                    callback_data=f'settings#bots'),
-       InlineKeyboardButton('📌 CHANNELS',
-                    callback_data=f'settings#channels')
-       ],[
-       InlineKeyboardButton('🖋️ CAPTION',
-                    callback_data=f'settings#caption'),
-       InlineKeyboardButton('🗃️ DATABASE',
-                    callback_data=f'settings#database')
-       ],[
-       InlineKeyboardButton('🔵 FILTERS',
-                    callback_data=f'settings#filters'),
-       InlineKeyboardButton('🛑 BUTTON',
-                    callback_data=f'settings#button')
-       ]]
 
 #===================Start Function===================#
 
@@ -117,10 +100,27 @@ async def log_msg(client, message):
     await client.send_document(message.chat.id, "log.txt") 
 
 @Client.on_message(filters.command('settings'))
-async def settings(client, message):
+async def settings(client, message): 
+    buttons = [[
+       InlineKeyboardButton('🤖 BOTS',
+                    callback_data=f'settings#bots'),
+       InlineKeyboardButton('📌 CHANNELS',
+                    callback_data=f'settings#channels')
+       ],[
+       InlineKeyboardButton('🖋️ CAPTION',
+                    callback_data=f'settings#caption'),
+       InlineKeyboardButton('🗃️ DATABASE',
+                    callback_data=f'settings#database')
+       ],[
+       InlineKeyboardButton('🔵 FILTERS',
+                    callback_data=f'settings#filters'),
+       InlineKeyboardButton('🛑 BUTTON',
+                    callback_data=f'settings#button')
+       ]]
+   reply_markup = InlineKeyboardMarkup(buttons)
    await message.reply_text(
      "<b>change your settings as your wish</b>",
-     reply_markup=buttons()
+     reply_markup=reply_markup()
      )
     
 @Client.on_callback_query(filters.regex(r'^settings'))
