@@ -24,7 +24,7 @@ logging.basicConfig(
 )
 
 # Auth Users
-AUTH_USERS = [ int(chat) for chat in Config.AUTH_USERS.split(",") if chat != '']
+BOT_OWNER_ID = [ int(chat) for chat in Config.BOT_OWNER_ID.split(",") if chat != '']
 
 # Prefixes 
 prefixes = ["/", "~", "?", "!"]
