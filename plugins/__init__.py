@@ -120,7 +120,7 @@ async def log_msg(client, message):
 async def settings(client, message):
    await message.reply_text(
      "<b>change your settings as your wish</b>",
-     reply_markup=main_buttons()
+     reply_markup=buttons()
      )
     
 @Client.on_callback_query(filters.regex(r'^settings'))
@@ -132,7 +132,7 @@ async def settings_query(bot, query):
   if type=="main":
      await query.message.edit_text(
        "<b>change your settings as your wish</b>",
-       reply_markup=main_buttons())
+       reply_markup=buttons())
        
   elif type=="bots":
      buttons = [] 
