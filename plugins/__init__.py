@@ -71,24 +71,19 @@ async def about(bot, query):
 @Client.on_callback_query(filters.regex(r'^settings'))
 async def settings_query(bot, query):
     buttons = [[
-       InlineKeyboardButton('🤖 BOTS',
-                    callback_data=f'settings#bots'),
-       InlineKeyboardButton('📌 CHANNELS',
-                    callback_data=f'settings#channels')
-       ],[
-       InlineKeyboardButton('🖋️ CAPTION',
-                    callback_data=f'settings#caption'),
-       InlineKeyboardButton('🗃️ DATABASE',
-                    callback_data=f'settings#database')
-       ],[
-       InlineKeyboardButton('🔵 FILTERS',
-                    callback_data=f'settings#filters'),
-       InlineKeyboardButton('🛑 BUTTON',
-                    callback_data=f'settings#button')
-       ]] 
+            InlineKeyboardButton('✚ Add bot ✚', callback_data='addbot')
+    ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await query.message.edit_text(
-    text=Translation.ABOUT_TXT,
+        text=Translation.ABOUT_TXT,
         reply_markup=reply_markup,
         disable_web_page_preview=True,
     )
+@Client.on_callback_query(filters.regex(r'^addbot')) 
+async def addbot_query(bot, query):
+    await query.message.delete()
+        text = await CLIENT.add_bot(client, query) 
+        if text != True: return
+        await query.message.reply_text(
+        "<b>bot token successfully added to db</b>",
+        reply_markup=InlineKeyboardMarkup(buttons))
