@@ -6,7 +6,7 @@ from translation import Translation
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaDocument
 from main import LOGGER, prefixes, AUTH_USERS
-from plugins import settings  
+  
 from .test import CLIENT 
 
 main_buttons = [[
