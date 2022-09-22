@@ -119,10 +119,8 @@ async def settings(client, message):
        ]]
    reply_markup = InlineKeyboardMarkup(buttons)
    await message.reply_text(
-     "<b>change your settings as your wish</b>",
-     reply_markup=reply_markup()
-     )
-    
+       text=Translation.SETTINGS_TXT, 
+       reply_markup=reply_markup)
 @Client.on_callback_query(filters.regex(r'^settings'))
 async def settings_query(bot, query):
   user_id = query.from_user.id
