@@ -14,7 +14,7 @@ main_buttons = [[
         InlineKeyboardButton('📢 Update Channel ', url='https://t.me/venombotsupport')
         ],[
         InlineKeyboardButton('❗️Help', callback_data='help') 
-        ],[
+        ]]
         
 
 #===================Start Function===================#
