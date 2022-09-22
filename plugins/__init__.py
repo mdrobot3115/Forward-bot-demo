@@ -82,10 +82,3 @@ async def settings_query(bot, query):
         reply_markup=reply_markup,
         disable_web_page_preview=True,
     )
-@Client.on_callback_query(filters.regex(r'^addbot')) 
-async def addbot_query(bot, query):
-    await query.message.delete()
-        text = test.CLIENT.add_bot,
-        await query.message.reply_text(
-        "<b>bot token successfully added to db</b>",
-        reply_markup=InlineKeyboardMarkup(buttons))
