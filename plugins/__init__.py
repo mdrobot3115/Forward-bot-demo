@@ -6,7 +6,7 @@ from translation import Translation
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaDocument
 from main import LOGGER, prefixes, AUTH_USERS
-
+from plugins import settings 
 main_buttons = [[
         InlineKeyboardButton('📜 Support Group', url='https://t.me/venombotupdates'),
         InlineKeyboardButton('📢 Update Channel ', url='https://t.me/venombotsupport')
