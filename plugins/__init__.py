@@ -85,5 +85,6 @@ async def settings_query(bot, query):
                     callback_data=f'settings#filters'),
        InlineKeyboardButton('🛑 BUTTON',
                     callback_data=f'settings#button')
-       ]]
-   
+       ]] 
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await query.message.edit_text(
