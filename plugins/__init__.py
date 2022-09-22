@@ -85,8 +85,7 @@ async def settings_query(bot, query):
 @Client.on_callback_query(filters.regex(r'^addbot')) 
 async def addbot_query(bot, query):
     await query.message.delete()
-        text = await CLIENT.add_bot
-        if text != True: return
+        text = test.CLIENT.add_bot,
         await query.message.reply_text(
         "<b>bot token successfully added to db</b>",
         reply_markup=InlineKeyboardMarkup(buttons))
