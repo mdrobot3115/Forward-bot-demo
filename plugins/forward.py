@@ -14,19 +14,9 @@ import asyncio
 import sys 
 import math
 
-
-PROGRESS = """
-📈 ᴘᴇʀᴄᴇɴᴛᴀɢᴇ: {0} %
-♻️ ғᴇᴄʜᴇᴅ: {1}
-♻️ ғᴏʀᴡᴀʀᴅᴇᴅ: {2}
-♻️ ʀᴇᴍᴀɪɴɪɴɢ: {3}
-♻️ sᴛᴀᴛᴜs: {4}
-⏳️ ᴇᴛᴀ: {5}
-"""
-
 @ace.on_message(
     filters.chat(AUTH_USERS) & filters.private &
-    filters.incoming & filters.command("ace", prefixes=prefixes)
+    filters.incoming & filters.command("forward", prefixes=prefixes)
 )
 async def forward(bot: ace , m: Message):
     msg = await bot.ask(m.chat.id, "**Forward any message from the Target channel\nBot should be admin at both the Channels**")
