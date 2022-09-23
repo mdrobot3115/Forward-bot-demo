@@ -84,7 +84,7 @@ async def settings_query(bot, query):
     )
 @Client.on_callback_query() 
 async def cb_handler(bot, query):
-if query.data =="addbot":
+    if query.data =="addbot":
      await query.message.delete()
      bot = await CLIENT.add_bot(bot, query)
      if bot != True: return
