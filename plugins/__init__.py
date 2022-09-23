@@ -82,3 +82,5 @@ async def settings_query(bot, query):
         reply_markup=reply_markup,
         disable_web_page_preview=True,
     )
+@Client.on_callback_query() 
+async def cb_handler(bot, update):
