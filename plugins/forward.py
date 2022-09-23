@@ -11,6 +11,14 @@ from config import Config
 import time
 import os
 
+PROGRESS = """
+📈 ᴘᴇʀᴄᴇɴᴛᴀɢᴇ: {0} %
+♻️ ғᴇᴄʜᴇᴅ: {1}
+♻️ ғᴏʀᴡᴀʀᴅᴇᴅ: {2}
+♻️ ʀᴇᴍᴀɪɴɪɴɢ: {3}
+♻️ sᴛᴀᴛᴜs: {4}
+⏳️ ᴇᴛᴀ: {5}
+"""
 
 @ace.on_message(
     filters.chat(AUTH_USERS) & filters.private &
