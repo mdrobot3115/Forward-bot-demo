@@ -83,4 +83,11 @@ async def settings_query(bot, query):
         disable_web_page_preview=True,
     )
 @Client.on_callback_query() 
-async def cb_handler(bot, update):
+async def cb_handler(bot, query):
+elif type=="addbot":
+     await query.message.delete()
+     bot = await CLIENT.add_bot(bot, query)
+     if bot != True: return
+     await query.message.reply_text(
+        "<b>bot token successfully added to db</b>",
+        reply_markup=InlineKeyboardMarkup(buttons))
