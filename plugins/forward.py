@@ -9,7 +9,11 @@ from pyrogram.types import Message
 from main import LOGGER, prefixes, AUTH_USERS
 from config import Config
 import time
-import os
+import os 
+import asyncio
+import sys 
+import math
+
 
 PROGRESS = """
 📈 ᴘᴇʀᴄᴇɴᴛᴀɢᴇ: {0} %
