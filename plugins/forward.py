@@ -27,11 +27,11 @@ async def forward(bot, message):
     await message.reply_text("Your Current settings are:\n\n➥ From Chat: {t_chat}\n➥ Target Chat: Library\n➥ SKIP Messages: 0\n\nAre you sure to forward with These settings?\n\nIf Yes send /continue, else send /cancel")
 @Client.on_message(filters.command('continue') & filters.user(AUTH_USERS)) 
 async def allow(bot, message): 
+    await bot.send_messge("🔰 FORWARDING STATUS 🔰\n\n🔄 Fetched: 19107\n\n📬 Remaining: 280037\n\n✅ Forwarded: 17453\n\n⏱ ETC : 7 Days 18 Hours 41 Minutes 28 Seconds\n\n🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 6.39%")
     for i in range(s_msg, f_msg):
         try:
             await bot.copy_message(
                 chat_id= t_chat,
                 from_chat_id= i_chat,
                 message_id= i 
-            ) 
-    await bot.send_messge("🔰 FORWARDING STATUS 🔰\n\n🔄 Fetched: 19107\n\n📬 Remaining: 280037\n\n✅ Forwarded: 17453\n\n⏱ ETC : 7 Days 18 Hours 41 Minutes 28 Seconds\n\n🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 6.39%")
+            )
