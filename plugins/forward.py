@@ -25,12 +25,6 @@ async def forward(bot, message):
     s_msg = int(msg1.forward_from_message_id)
     f_msg = int(msg2.forward_from_message_id)+1
     await message.reply_text("Your Current settings are:\n\n➥ From Chat: {t_chat}\n➥ Target Chat: Library\n➥ SKIP Messages: 0\n\nAre you sure to forward with These settings?\n\nIf Yes send /continue, else send /cancel")
-@Client.on_message(filters.command('continue') & filters.user(AUTH_USERS)) 
-async def allow(bot, message): 
-    i_chat = msg1.forward_from_chat
-    s_msg = int(msg1.forward_from_message_id)
-    f_msg = int(msg2.forward_from_message_id)+1
-    await message.reply_text("🔰 FORWARDING STATUS 🔰\n\n🔄 Fetched: 19107\n\n📬 Remaining: 280037\n\n✅ Forwarded: 17453\n\n⏱ ETC : 7 Days 18 Hours 41 Minutes 28 Seconds\n\n🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 6.39%") 
     try:
         for i in range(s_msg, f_msg):
             try:
