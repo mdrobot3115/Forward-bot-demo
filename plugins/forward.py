@@ -33,6 +33,7 @@ async def forward(bot, message):
                     from_chat_id= i_chat,
                     message_id= i 
                 )
+                time.sleep(2)
             except Exception:
                 continue
     except Exception as e:
