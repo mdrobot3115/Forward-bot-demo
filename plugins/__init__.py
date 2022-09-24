@@ -33,13 +33,8 @@ async def start(client, message):
 
 @Client.on_message(filters.private & filters.command(['restart']) & filters.user(AUTH_USERS))
 async def restart(client, message):
-    msg = await message.reply_text(
-        text="<i>Trying to restarting.....</i>"
-    )
-    await asyncio.sleep(5)
-    await msg.edit("<i>Server restarted successfully ✅</i>")
+    await message.reply_text("**Process Cancelled Succefully !**")
     os.execl(sys.executable, sys.executable, *sys.argv)
-
 #==================Callback Functions==================#
 
 @Client.on_callback_query(filters.regex(r'^help'))
