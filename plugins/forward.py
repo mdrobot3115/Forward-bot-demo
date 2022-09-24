@@ -14,7 +14,7 @@ import asyncio
 import sys 
 import math
 
-@Client.on_message(filters.command('setskip') & filters.user(AUTH_USERS))
+@Client.on_message(filters.command('forward') & filters.user(AUTH_USERS))
 async def forward(bot, message):
     msg = await bot.ask(message.chat.id, "**Forward any message from the Target channel\nBot should be admin at both the Channels**")
     t_chat = msg.forward_from_chat.id
