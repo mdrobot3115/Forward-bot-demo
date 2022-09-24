@@ -24,9 +24,7 @@ async def forward(bot, message):
     i_chat = msg1.forward_from_chat.id
     s_msg = int(msg1.forward_from_message_id)
     f_msg = int(msg2.forward_from_message_id)+1
-    last_msg_id = message.forward_from_message_id
-    chat_id = message.forward_from_chat.username or message.forward_from_chat.id
-    await message.reply_text('**Forwarding Started**\n\nPress /restart to Stop and /log to get log TXT file')
+    await message.reply_text("Your Current settings are:\n\n➥ From Chat: {t_chat}\n➥ Target Chat: Library\n➥ SKIP Messages: 0\n\nAre you sure to forward with These settings?\n\nIf Yes send /continue, else send /cancel")
     try:
         for i in range(s_msg, f_msg):
             try:
