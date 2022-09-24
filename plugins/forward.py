@@ -34,4 +34,4 @@ async def allow(bot, message):
                 from_chat_id= i_chat,
                 message_id= i 
             ) 
-            await bot.send_messge("🔰 FORWARDING STATUS 🔰\n
+            await bot.send_messge("🔰 FORWARDING STATUS 🔰\n\n🔄 Fetched: 19107\n\n📬 Remaining: 280037\n\n✅ Forwarded: 17453\n\n⏱ ETC : 7 Days 18 Hours 41 Minutes 28 Seconds\n\n🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 6.39%")
