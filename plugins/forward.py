@@ -36,7 +36,7 @@ async def allow(bot, message):
                 message_id= i 
             )
         except Exception:
-                continue
-    except Exception as e:
-        await message.reply_text(str(e))
+            continue
+except Exception as e:
+    await message.reply_text(str(e))
     await message.reply_text("Done Forwarding")
