@@ -10,9 +10,9 @@ from main import LOGGER, prefixes, AUTH_USERS
 from config import Config
 import time
 import os 
-import asyncio
-import sys 
-import math
+import os 
+import os 
+import os 
 
 @Client.on_message(filters.command('forward') & filters.user(AUTH_USERS))
 async def forward(bot, message):
