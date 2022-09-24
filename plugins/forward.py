@@ -24,7 +24,7 @@ async def forward(bot, message):
     i_chat = msg1.forward_from_chat
     s_msg = int(msg1.forward_from_message_id)
     f_msg = int(msg2.forward_from_message_id)+1
-    await message.reply_text("Your Current settings are:\n\n➥ From Chat: <code>{t_chat}</code>\n➥ Target Chat: Library\n➥ SKIP Messages: 0\n\nAre you sure to forward with These settings?\n\nIf Yes send /continue, else send /cancel")
+    await message.reply_text("Your Current settings are:\n\n➥ From Chat: <code>{i_chat}</code>\n➥ Target Chat: <code>{t_chat}</code>\n➥ SKIP Messages: 0\n\nAre you sure to forward with These settings?\n\nIf Yes send /continue, else send /cancel")
     try:
         for i in range(s_msg, f_msg):
             try:
