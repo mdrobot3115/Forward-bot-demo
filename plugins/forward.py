@@ -32,9 +32,9 @@ async def allow(bot, message):
             await bot.copy_message(
                 chat_id= t_chat,
                 from_chat_id= i_chat,
-                message_id= i
-                )
-                asyncio.sleep(2)
+                message_id= i 
+                ) 
+            await asyncio.sleep(2)
             except Exception:
                 continue
     except Exception as e:
