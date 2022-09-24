@@ -26,7 +26,7 @@ async def forward(bot, message):
     f_msg = int(msg2.forward_from_message_id)+1
     
 @Client.on_message(filters.command('continue') & filters.user(AUTH_USERS)) 
-async def continue(bot, message):
+async def allow(bot, message):
     await message.reply_text("Your Current settings are:\n\n➥ From Chat: {t_chat}\n➥ Target Chat: Library\n➥ SKIP Messages: 0\n\nAre you sure to forward with These settings?\n\nIf Yes send /continue, else send /cancel")
     try:
         for i in range(s_msg, f_msg):
