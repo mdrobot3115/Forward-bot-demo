@@ -33,8 +33,7 @@ async def allow(bot, message):
                 chat_id= t_chat,
                 from_chat_id= i_chat,
                 message_id= i 
-                ) 
-            await asyncio.sleep(2)
+                )
             except Exception:
                 continue
     except Exception as e:
