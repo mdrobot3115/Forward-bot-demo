@@ -33,7 +33,5 @@ async def allow(bot, message):
                 chat_id= t_chat,
                 from_chat_id= i_chat,
                 message_id= i 
-               )
-   except Exception as e:
-     await message.reply_text(str(e))
-     await message.reply_text("🥳 Task Successfully Completed! 🥳")
+            ) 
+            await bot.send_messge("🔰 FORWARDING STATUS 🔰\n
