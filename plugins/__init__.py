@@ -31,10 +31,11 @@ async def start(client, message):
 
 #==================Restart Function==================#
 
-@Client.on_message(filters.private & filters.command(['restart']) & filters.user(AUTH_USERS))
+@Client.on_message(filters.private & filters.command(['cancel']) & filters.user(AUTH_USERS))
 async def restart(client, message):
     await message.reply_text("**Process Cancelled Succefully !**")
     os.execl(sys.executable, sys.executable, *sys.argv)
+
 #==================Callback Functions==================#
 
 @Client.on_callback_query(filters.regex(r'^help'))
