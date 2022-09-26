@@ -11,5 +11,8 @@ from pyrogram.errors import FloodWait
 from config import Config
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)]\[buttonurl:/{0,2}(.+?)(:same)?])")
 BOT_TOKEN_TEXT = "<b>1) create a bot using @BotFather\n2) Then you will get a message with bot token\n3) Forward that message to me</b>"
-SESSION_STRING_SIZE = 351
+SESSION_STRING_SIZE = 351 
+
+class Client(Methods):
+def __init__(
 
