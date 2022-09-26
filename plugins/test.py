@@ -15,4 +15,10 @@ SESSION_STRING_SIZE = 351
 
 class Client(Methods):
 def __init__(
+   self.api_id = API_ID
+   self.api_hash = API_HASH
+
+async def authorize(self) -> User:
+        if self.bot_token:
+            return await self.sign_in_bot(self.bot_token
 
