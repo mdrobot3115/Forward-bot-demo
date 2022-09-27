@@ -1,24 +1,37 @@
-import os
-import re 
-import sys
-import asyncio 
-import logging 
+from pyrogram import raw
+from pyrogram import types 
+from pyrogram.errors import UserMigrate
+from pyrogram.session import Session, Auth
+class SignInBot:
+    async def sign_in_bot( 
+        while True:
+            try:
+                r = await self.invoke(
+                    raw.functions.auth.ImportBotAuthorization(
+                        flags=0,
+                        api_id=self.api_id,
+                        api_hash=self.api_hash,
+                        bot_auth_token=bot_token
+                    )
+                )
+            except UserMigrate as e:
+                await self.session.stop()
 
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message 
-from pyrogram.errors.exceptions.bad_request_400 import AccessTokenExpired, AccessTokenInvalid
-from pyrogram.errors import FloodWait 
-from config import Config
-BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)]\[buttonurl:/{0,2}(.+?)(:same)?])")
-BOT_TOKEN_TEXT = "<b>1) create a bot using @BotFather\n2) Then you will get a message with bot token\n3) Forward that message to me</b>"
-SESSION_STRING_SIZE = 351 
+                await self.storage.dc_id(e.value)
+                await self.storage.auth_key(
+                    await Auth(
+                        self, await self.storage.dc_id(),
+                        await self.storage.test_mode()
+                    ).create()
+                )
+                self.session = Session(
+                    self, await self.storage.dc_id(),
+                    await self.storage.auth_key(), await self.storage.test_mode()
+                )
+ 
+                await self.session.start()
+            else:
+                await self.storage.user_id(r.user.id)
+                await self.storage.is_bot(True)
 
-class Client(Methods):
-def __init__(
-   self.api_id = API_ID
-   self.api_hash = API_HASH
-
-async def authorize(self) -> User:
-        if self.bot_token:
-            return await self.sign_in_bot(self.bot_token
-
+                return types.User._parse(self, r.user)
