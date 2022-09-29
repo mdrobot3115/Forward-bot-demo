@@ -5,7 +5,7 @@ from main import LOGGER, prefixes, AUTH_USERS
 from config import Config
 import os
 import sys
-from plugins.test import CLIENT 
+
 from translation import Translation
 
 CLIENT = CLIENT()
