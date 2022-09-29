@@ -11,4 +11,4 @@ class Config(object):
     API_ID = int(os.environ.get("API_ID"))
     API_HASH = os.environ.get("API_HASH")
     AUTH_USERS = os.environ.get("OWNER")
-
+    CAPTION = os.environ.get('CAPTION')
