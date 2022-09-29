@@ -29,11 +29,19 @@ async def forward(bot: ace , m: Message):
     try:
         for i in range(s_msg, f_msg):
             try:
+                if message.video:
+                    file_name = m.video.file_name
+                elif message.document:
+                    file_name = m.document.file_name
+                elif message.audio:
+                    file_name = m.audio.file_name
+                else:
+                    file_name = None
                 await bot.copy_message(
                     chat_id= t_chat,
                     from_chat_id= i_chat,
                     message_id= i,
-                    caption=Config.CAPTION,
+                    caption=Config.CAPTION.format(file_name),
                 )
                 time.sleep(2)
             except Exception:
