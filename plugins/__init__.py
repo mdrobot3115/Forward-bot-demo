@@ -5,10 +5,7 @@ from main import LOGGER, prefixes, AUTH_USERS
 from config import Config
 import os
 import sys
-
 from translation import Translation
-
-CLIENT = CLIENT()
 
 main_buttons = [[
         InlineKeyboardButton('📜 Support Group', url='https://t.me/venombotupdates'),
