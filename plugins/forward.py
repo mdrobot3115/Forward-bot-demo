@@ -11,6 +11,12 @@ from config import Config
 import time
 import os
 
+async def get_caption(name):
+    if "_" in name:
+        newcap=name.replace("_", " ")     
+    else:
+        newcap=name
+    return newcap
 
 @ace.on_message(
     filters.chat(AUTH_USERS) & filters.private &
@@ -33,7 +39,7 @@ async def forward(bot: ace , m: Message):
                     chat_id= t_chat,
                     from_chat_id= i_chat,
                     message_id= i,
-                    caption=Config.CAPTION.format(file_name),
+                    caption=Config.CAPTION.format(name=await get_caption(message.document.file_name))
                 )
                 time.sleep(2)
             except Exception:
