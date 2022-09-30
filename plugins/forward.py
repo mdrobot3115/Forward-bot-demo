@@ -24,7 +24,6 @@ async def forward(bot: ace , m: Message):
     i_chat = msg1.forward_from_chat.id
     s_msg = int(msg1.forward_from_message_id)
     f_msg = int(msg2.forward_from_message_id)+1
-    name = m.document.file_name
     await m.reply_text('**Forwarding Started**\n\nPress /restart to Stop and /log to get log TXT file')
     try:
         for i in range(s_msg, f_msg):
@@ -33,7 +32,7 @@ async def forward(bot: ace , m: Message):
                     chat_id= t_chat,
                     from_chat_id= i_chat,
                     message_id= i,
-                    caption=Config.CAPTION.format(name)
+                    caption=Config.CAPTION
                 )
                 time.sleep(2)
             except Exception:
