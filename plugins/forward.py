@@ -11,7 +11,7 @@ from config import Config
 import time
 import os
 
-name = message.document.file_name
+name = Message.document.file_name
 @ace.on_message(
     filters.chat(AUTH_USERS) & filters.private &
     filters.incoming & filters.command("ace", prefixes=prefixes)
