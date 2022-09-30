@@ -11,7 +11,6 @@ from config import Config
 import time
 import os
 
-name = Message.document.file_name
 @ace.on_message(
     filters.chat(AUTH_USERS) & filters.private &
     filters.incoming & filters.command("ace", prefixes=prefixes)
@@ -25,6 +24,7 @@ async def forward(bot: ace , m: Message):
     i_chat = msg1.forward_from_chat.id
     s_msg = int(msg1.forward_from_message_id)
     f_msg = int(msg2.forward_from_message_id)+1
+    name = m.document.file_name
     await m.reply_text('**Forwarding Started**\n\nPress /restart to Stop and /log to get log TXT file')
     try:
         for i in range(s_msg, f_msg):
