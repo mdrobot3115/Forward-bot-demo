@@ -11,6 +11,31 @@ from config import Config
 import time
 import os
 
+def custom_caption(msg, caption):
+  if msg.media:
+    if (msg.video or msg.document or msg.audio or msg.photo):
+      media = getattr(msg, msg.media.value, None)
+      if media:
+        file_name = getattr(media, 'file_name', '')
+        file_size = getattr(media, 'file_size', '')
+        fcaption = getattr(msg, 'caption', '')
+        if fcaption:
+          fcaption = fcaption.html
+        if caption:
+          return caption.format(filename=file_name, size=get_size(file_size), caption=fcaption)
+        return fcaption
+  return None
+
+def get_size(size):
+  units = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB"]
+  size = float(size)
+  i = 0
+  while size >= 1024.0 and i < len(units):
+     i += 1
+     size /= 1024.0
+  return "%.2f %s" % (size, units[i]) 
+
+
 @ace.on_message(
     filters.chat(AUTH_USERS) & filters.private &
     filters.incoming & filters.command("ace", prefixes=prefixes)
@@ -32,7 +57,7 @@ async def forward(bot: ace , m: Message):
                     chat_id= t_chat,
                     from_chat_id= i_chat,
                     message_id= i,
-                    caption=Config.CAPTION
+                    caption=CAPTION
                 )
                 time.sleep(2)
             except Exception:
