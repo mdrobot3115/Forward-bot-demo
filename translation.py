@@ -36,8 +36,8 @@ I can forward all message from one channel to another channel</i>
   ABOUT_TXT = """
 ╔════❰ ғᴏʀᴡᴀʀᴅ ʙᴏᴛ ❱═❍⊱❁۪۪
 ║╭━━━━━━━━━━━━━━━➣
-║┣⪼📃ʙᴏᴛ : [Fᴏʀᴡᴀʀᴅ Bᴏᴛ](https://t.me/kr_forward_bot)
-║┣⪼👦Cʀᴇᴀᴛᴏʀ : [『𝐓𝐆』 ཌ𑫞ᴀᴘᴘƴད°ⲃꮐꮇ°ツ](https://t.me/tamil_kid)
+║┣⪼📃ʙᴏᴛ : [Fᴏʀᴡᴀʀᴅ Bᴏᴛ]()
+║┣⪼👦Cʀᴇᴀᴛᴏʀ : [『𝐓𝐆』 ཌ𑫞ᴀᴘᴘƴད°ⲃꮐꮇ°ツ]
 ║┣⪼📡Hᴏsᴛᴇᴅ ᴏɴ : Hᴇʀᴏᴋᴜ
 ║┣⪼🗣️Lᴀɴɢᴜᴀɢᴇ : Pʏᴛʜᴏɴ3
 ║┣⪼📚Lɪʙʀᴀʀʏ : Pʏʀᴏɢʀᴀᴍ Asʏɴᴄɪᴏ 2.0.0 
