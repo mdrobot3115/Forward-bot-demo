@@ -8,8 +8,8 @@ import sys
 from translation import Translation
 
 main_buttons = [[
-        InlineKeyboardButton('📜 Support Group', url='https://t.me/venombotupdates'),
-        InlineKeyboardButton('📢 Update Channel ', url='https://t.me/venombotsupport')
+        InlineKeyboardButton('📜 Support Group', url=''),
+        InlineKeyboardButton('📢 Update Channel ', url='')
         ],[
         InlineKeyboardButton('❗️Help', callback_data='help') 
         ]]
